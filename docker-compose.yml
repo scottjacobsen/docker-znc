@@ -1,0 +1,15 @@
+---
+
+data:
+  image: jacobsenscott/znc
+  volumes:
+    - /home/znc/.znc
+    - /var/lib/bitlbee
+  entrypoint: echo znc data only container
+
+znc:
+  image: jacobsenscott/znc
+  volumes_from:
+    - data
+  ports:
+    - 6697:6697

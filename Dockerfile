@@ -1,8 +1,10 @@
-FROM phusion/baseimage
+FROM phusion/baseimage:0.9.18
 MAINTAINER Scott Jacobsen <jacobsenscott@yahoo.com>
+ENV SYSTEM_UPDATE=1
 RUN curl --silent https://code.bitlbee.org/debian/release.key | apt-key add - && \
 echo "deb http://code.bitlbee.org/debian/master/trusty/amd64/ ./" >> /etc/apt/sources.list.d/bitlbee.list && \
 apt-get update && \
+apt-get upgrade -y -o Dpkg::Options::="--force-confold" && \
 apt-get install -y \
 bitlbee \
 bitlbee-plugin-otr \

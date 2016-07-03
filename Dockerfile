@@ -1,6 +1,6 @@
 FROM phusion/baseimage:0.9.18
 MAINTAINER Scott Jacobsen <jacobsenscott@yahoo.com>
-ENV SYSTEM_UPDATE=2
+ENV SYSTEM_UPDATE=3
 RUN curl --silent https://code.bitlbee.org/debian/release.key | apt-key add - && \
 echo "deb http://code.bitlbee.org/debian/master/trusty/amd64/ ./" >> /etc/apt/sources.list.d/bitlbee.list && \
 apt-get update && \
